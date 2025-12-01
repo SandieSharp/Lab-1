@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+background-color: #f4f4f4;
+}
+
+header {
+
+}
+
+header nav ul {
+
+}
+
+footer {
+    padding: 1rem;
+    background-color: #555;
+    position: sticky;
+    width: 100%;
+    bottom: 0;
+}
