@@ -48,7 +48,7 @@ body {
     padding: 0.35rem 0.75rem;
     border-radius: 999px;
     font-size: 0.9rem;
-    transition: background-color 0.2s ease, color 0.2s easetransform 0.1s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
 
 .nav-list a:hover,
