@@ -4,36 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profilsida</title>
+    <title>My Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <div>
-            <!-- logo -->
+    <header class="site-header">
+        <div class="logo">
+            Sandra
         </div>
         <nav>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul class="nav-list">
+                <li><a href=#about>About</a></li>
+                <li><a href=#interests>Interests</a></li>
+                <li><a href=#goals></a>Goals</li>
+                <li><a href="contact">Contact</a></li>
+                <!-- extern site -->
+                <li><a href="" target="_blank" rel="noopener"></a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <div>
-                <!-- image of me -->
-            </div>
-            <div>
-                <!-- about me -->
-                <p>
 
+    <main>
+        <!-- ABOUT -->
+        <section id="about" class="section about-section">
+            <div class="about-image">
+                <!-- image of me -->
+                 <img src="" alt="" srcset="">
+            </div>
+
+            <div class="about-text">
+                <!-- about me -->
+                <h1>About Me</h1>
+                <p>
+                    I was born and raised in Kristianstad
                 </p>
-                <table>
+
+                <!-- table with quick facts about me -->
+                <table class="quick-facts">
                     <!-- facts about me -->
+                     <caption>Quick facts</caption>
+                     <tbody>
+                        <tr>
+                            <th>text</th>
+                            <td>text</td>
+                        </tr>
+                        <tr>
+                            <th>text</th>
+                            <td>text</td>
+                        </tr>
+                        <tr>
+                            <th>text</th>
+                            <td>text</td>
+                        </tr>
+                     </tbody>
                 </table>
             </div>
         </section>
@@ -55,14 +79,13 @@
                 </figure>
             </div>
         </section>
-
-        <footer>
-            <p>
-                Kontakt: <a href=""></a>
-                <p>&copy; 2025 SandieSharp. </p>
-            </p>
-        </footer>
     </main>
+
+    <footer class="site-footer">
+        <p>Kontakt: <a href="mailto:berntsson.sandra@gmail.com">berntsson.sandra@gmail.com</a>
+        <p>&copy; 2025 SandieSharp. Alla rättigheter förbehållna</p>
+        </p>
+    </footer>
 
 </body>
 
