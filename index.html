@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header class="site-header">
         <div class="logo">
-            Sandra
+            Portfolio
         </div>
         <nav>
             <ul class="nav-list">
+                <li><a href=#top>Home</a></li>
                 <li><a href=#about>About</a></li>
-                <li><a href=#interests>Interests</a></li>
-                <li><a href=#goals></a>Goals</a></li>
+                <li><a href=#portfolio></a>Portfolio</li>
+                <li><a href=#skills></a>Skills</li>
                 <li><a href=#contact>Contact</a></li>
                 <!-- extern site -->
                 <li><a href="" target="_blank" rel="noopener"></a></li>
@@ -25,87 +26,296 @@
         </nav>
     </header>
 
-    <main>
-        <!-- ABOUT -->
-        <section id="about" class="section about-section">
-            <div class="about-image">
-                <!-- Image of me -->
-                <img src="images/profile_picture.jpg" alt="Photo of me with my best friend">
+    <main id="top">
+
+        <!-- HERO / Intro -->
+        <section class="section hero-section">
+            <div class="hero-text">
+                <p class="hero-kicker">Front-end developer student</p>
+                <h1>Hello, I’m Sandra.</h1>
+                <p class="hero-lead">
+                    I’m on my way to becoming a front-end developer, combining my love for usability,
+                    visual design, and simple, welcoming digital experiences.
+                </p>
+                <a href="#portfolio" class="btn hero-btn">View my work</a>
             </div>
 
-            <div class="about-text">
-                <!-- About me -->
-                <h1>About Me</h1>
+
+            <!-- Image of me -->
+            <img src="images/profile_picture.jpg" alt="Photo of me with my best friend">
+            </div>
+
+            <div class="hero-image">
+                <!-- Photo of me -->
+                <img src="images/profile_picture.jpg" alt="Portrait of Sandra smiling together with a friend">
+            </div>
+        </section>
+
+        <!-- ABOUT – BIO, ACADEMIC INTERESTS/HOBBIES, FUTURE GOALS -->
+        <section id="about" class="section about-section">
+            <div class="about-main">
+                <h2>About Me</h2>
+
+                <h3>Biography</h3>
                 <p>
-                    I was born and raised in Kristianstad
+                    I was born and raised in Kristianstad, a place that has always felt warm and familiar to me.
+                    One of my clearest childhood memories is spending long summer evenings outside with my family,
+                    playing in the garden until the sun finally set. I remember the smell of freshly cut grass and
+                    the feeling of running barefoot across the lawn – small moments that still remind me of where
+                    I come from and what makes me feel at home. Those early years shaped my love for nature,
+                    togetherness, and simple joys.
                 </p>
 
-                <!-- Table with quick facts about me -->
+                <h3>Academic Interests &amp; Hobbies</h3>
+                <p>
+                    My interest in digital tools and creative work has grown gradually over the years. I’ve always
+                    enjoyed organizing, creating structure, and finding smart ways to make everyday life easier – both
+                    at home and at work. Over time, this curiosity turned into a passion for learning more about
+                    digital communication, web tools, and how technology can support creativity.
+                </p>
+                <p>
+                    Outside of my studies, I love anything that lets me express myself or unwind: cooking, baking,
+                    traveling, long walks with our dog, gardening, and reading. Food experiences, especially shared
+                    with my family, are a big part of my life.
+                </p>
+                
+                <h3>Future Goals</h3>
+                <p>
+                    One of my most important goals is to become a front-end developer and work with user-friendly,
+                    accessible websites. I want people to feel that technology is simple and inviting, not complicated
+                    or overwhelming – and that’s why this goal means so much to me.
+                </p>
+            </div> 
+
+            <!-- QUICK FACTS-TABELL -->
+            <aside class="about-aside">
                 <table class="quick-facts">
                     <caption>Quick facts</caption>
                     <tbody>
                         <tr>
-                            <th>text</th>
-                            <td>text</td>
+                            <th>Hometown</th>
+                            <td>Born and raised in Kristianstad</td>
                         </tr>
                         <tr>
-                            <th>text</th>
-                            <td>text</td>
+                            <th>Family</th>
+                            <td>Partner, three children &amp; one dog</td>
                         </tr>
                         <tr>
-                            <th>text</th>
-                            <td>text</td>
+                            <th>Favourite place</th>
+                            <td>Our house in the Blekinge archipelago</td>
                         </tr>
                     </tbody>
                 </table>
+            </aside>
+        </section>
+
+ <!-- PORTFOLIO – dina bilder som “case” -->
+        <section id="portfolio" class="section portfolio-section">
+            <h2>Portfolio Highlights</h2>
+            <p class="section-intro">
+                A glimpse into the things that inspire me and reflect who I am – from food experiences
+                to places that feel like home.
+            </p>
+
+            <div class="portfolio-grid">
+                <article class="portfolio-card">
+                    <figure>
+                        <img src="images/frantzen_kitchen.jpg" alt="Fine dining dishes and kitchen view at restaurant Frantzén in Stockholm">
+                        <figcaption>Food experience at restaurant Frantzén, Stockholm</figcaption>
+                    </figure>
+                    <h3>Culinary Experiences</h3>
+                    <p>
+                        I love exploring food, both in my own kitchen and at restaurants. Trying new flavours and
+                        presentations inspires me to think creatively – something I bring with me into design work.
+                    </p>
+                </article>
+
+                <article class="portfolio-card">
+                    <figure>
+                        <img src="images/blekinge.jpeg" alt="View over the Blekinge archipelago by the sea">
+                        <figcaption>Our house and surroundings in the Blekinge archipelago</figcaption>
+                    </figure>
+                    <h3>Blekinge – My Happy Place</h3>
+                    <p>
+                        Our house in the Blekinge archipelago is where I feel most at peace. The sea, the light and the
+                        nature remind me why I value balance, simplicity and meaningful everyday life.
+                    </p>
+                </article>
+
+                <article class="portfolio-card">
+                    <figure>
+                        <img src="images/buggy_dubai.JPEG" alt="Buggy ride in the desert outside Dubai">
+                        <figcaption>Buggy ride in the desert outside Dubai</figcaption>
+                    </figure>
+                    <h3>Travel &amp; New Perspectives</h3>
+                    <p>
+                        I enjoy traveling and discovering new places. Experiencing different environments and cultures
+                        broadens my perspective – something that helps me understand users and different ways of seeing
+                        the world.
+                    </p>
+                </article>
             </div>
         </section>
 
+        <!-- SKILLS / FOKUS SOM PORTFOLIO -->
+        <section id="skills" class="section skills-section">
+            <h2>Skills &amp; Focus</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Front-end Basics</h3>
+                    <ul>
+                        <li>HTML5 &amp; semantic structure</li>
+                        <li>CSS &amp; responsive layouts</li>
+                        <li>Accessibility and readability</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Strengths</h3>
+                    <ul>
+                        <li>Eye for details and structure</li>
+                        <li>User-focused thinking</li>
+                        <li>Curious and eager to learn</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>What I’m Working On</h3>
+                    <ul>
+                        <li>Improving my front-end projects</li>
+                        <li>Building a stronger design sense</li>
+                        <li>Creating more portfolio pieces</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+         <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="contact-info">
+                <h2>Contact Me</h2>
+                <p>
+                    Do you have any questions, feedback, or just want to say hi?
+                    Feel free to send me a message.
+                </p>
+                <p>
+                    Email: <a href="mailto:berntsson.sandra@gmail.com">berntsson.sandra@gmail.com</a>
+                </p>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form action="mailto:berntsson.sandra@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+     <footer class="site-footer">
+        <p>Contact: <a href="mailto:berntsson.sandra@gmail.com">berntsson.sandra@gmail.com</a></p>
+        <p>&copy; 2025 SandieSharp. All rights reserved.</p>
+        <p>
+            <a href="#!">Privacy Policy</a> ·
+            <a href="#!">Terms of Use</a>
+        </p>
+    </footer>
+</body>
+
+
+
+
+
+
+
+
+        <!-- Table with quick facts about me -->
+        <!-- <table class="quick-facts">
+            <caption>Quick facts</caption>
+            <tbody>
+                <tr>
+                    <th>Specialization</th>
+                    <td>Web Development</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>Kristianstad/Blekinge</td>
+                </tr>
+                <tr>
+                    <th>Favoritverktyg</th>
+                    <td>VS Code</td>
+                </tr>
+
+            </tbody>
+        </table>
+        </div>
+        </section> -->
+
         <!-- Interests and hobbies -->
-        <section id="interests" class="section interests-section">
+        <!-- <section id="interests" class="section interests-section">
             <div class="interests-text">
-                <h2>Interests &amp; Hobbies</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolor accusantium quas nihil
-                    repellat! Non modi hic enim numquam! Rerum harum dolorem, soluta fugit laudantium doloribus officiis
-                    unde distinctio quae?
+                <h2>Academic Interests &amp; Hobbies</h2>
+                <p>My interest in digital tools and creative work grew gradually over the years. I’ve always enjoyed
+                    organizing, creating structure, and finding smart ways to make everyday life easier — both at home
+                    and at work. Over time, this curiosity turned into a passion for learning more about digital
+                    communication, web tools, and how technology can support creativity.
+
+                    Outside academics, I enjoy anything that lets me express myself or unwind: cooking, baking,
+                    traveling, long walks with our dog, gardening, and reading. But it was my fascination with how
+                    digital tools can connect ideas, people, and creativity that first sparked my interest in this
+                    field, and it continues to motivate me to learn more.
                 </p>
 
                 <ul>
                     <li><strong>Cooking</strong> - I love cooking, baking and foodexperiences</li>
-                    <li><strong>Blekinge</strong> - I love being at our house in the Blekinge archipelagio</li>
+                    <li><strong>Blekinge</strong> - A favouriteplace by the ocean</li>
                     <li><strong>Traveling</strong> - experiencing new places is wonderful</li>
                 </ul>
-            </div>
+            </div> -->
 
             <!-- interest-images -->
-            <div class="interests-image">
+            <!-- <div class="interests-images">
+                <figure>
+                    <img src="images/dinner_at_onyx.jpg" alt="Dinner in Budapest" srcset="">
+                    <figcaption>Dinner in Budapest</figcaption>
+                </figure>
                 <figure>
                     <img src="images/frantzen_kitchen.jpg" alt="Foodexperience in Stockholm at Frantzén" srcset="">
                     <figcaption>Foodexperience at restaurant Frantzén</figcaption>
                 </figure>
                 <figure>
                     <img src="images/blekinge.jpeg" alt="The Blekinge archipelagio" srcset="">
-                    <figcaption>My Happyplace - Blekinge</figcaption>
+                    <figcaption>My happy place - Blekinge</figcaption>
                 </figure>
                 <figure>
                     <img src="images/buggy_dubai.JPEG" alt="Buggyride in the desert in Dubai" srcset="">
                     <figcaption>Buggyride in the desert in Dubai</figcaption>
                 </figure>
             </div>
-        </section>
+        </section> -->
 
         <!-- Future goals -->
-        <section id="goals" class="section goals-section">
+        <!-- <section id="goals" class="section goals-section">
             <h2>Future Goals</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste excepturi ex debitis ab amet autem
-                facilis, nam maiores vero, consequuntur eum repellendus. Nisi cupiditate ab veritatis, voluptatem
-                reprehenderit sunt. Temporibus.
+                One of my most important goals is to become a front-end developer and work with user-friendly,
+                accessible websites. I want people to feel that technology is simple and inviting, not complicated or
+                overwhelming — and that’s why this goal means so much to me.
             </p>
-        </section>
+        </section> -->
 
         <!-- Contact -->
-        <section id="contact" class="section contact-section">
+        <!-- <section id="contact" class="section contact-section">
             <div class="contact-info">
                 <h2>Contact Me</h2>
                 <p>
@@ -114,10 +324,10 @@
                 <p>
                     Email: <a href="mailto:berntsson.sandra@gmail.com">berntsson.sandra@gmail.com</a>
                 </p>
-            </div>
+            </div> -->
 
             <!-- Mail form -->
-            <div class="contact-form-wrapper">
+            <!-- <div class="contact-form-wrapper">
                 <form action="mailto:berntsson.sandra@gmail.com" method="post" enctype="text/plain">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -143,9 +353,8 @@
     <footer class="site-footer">
         <p>Kontakt: <a href="mailto:berntsson.sandra@gmail.com">berntsson.sandra@gmail.com</a>
         <p>&copy; 2025 SandieSharp. Alla rättigheter förbehållna.</p>
-        </p>
     </footer>
 
 </body>
 
-</html>
+</html> -->
