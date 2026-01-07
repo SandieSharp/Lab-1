@@ -125,6 +125,7 @@
                         a clean, modern layout focusing on visual storytelling through food photography. The goal was to
                         design a homepage that immediately conveys atmosphere, quality, and exclusivity — the same
                         feeling you get when stepping into a fine dining restaurant.
+                    </p>
                 </article>
 
                 <article class="portfolio-card">
@@ -204,9 +205,15 @@
             <div class="contact-form-wrapper">
                 <form id="contactForm" novalidate>
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                        <p class="error-text" id="nameErr"></p>
+                        <label for="firstName">First name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        <p class="error-text" id="firstNameErr"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                        <p class="error-text" id="lastNameErr"></p>
                     </div>
 
                     <div class="form-group">
@@ -227,7 +234,7 @@
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea name="message" id="message" rows="5" required></textarea>
-                        <p id="charCount">0 / 20 characters</p>
+                        <p id="charCount">0 / 200 characters</p>
                         <p class="error-text" id="msgErr"></p>
                     </div>
 
@@ -235,7 +242,7 @@
                         <button type="submit" class="btn">Submit</button>
                         <button type="button" class="btn" id="clearBtn">Clear</button>
                     </div>
-                    
+
                     <p id="successMsg"></p>
                 </form>
             </div>

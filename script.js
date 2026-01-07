@@ -2,12 +2,14 @@
 
 // Get form and input elements
 const form = document.getElementById("contactForm");
-const nameEl = document.getElementById("name");
+const firstNameEl = document.getElementById("firstName");
+const lastNameEl = document.getElementById("lastName");
 const emailEl = document.getElementById("email");
 const msgEl = document.getElementById("message");
 
 // Error message elements
-const nameErr = document.getElementById("nameErr");
+const firstNameErr = document.getElementById("firstNameErr");
+const lastNameErr = document.getElementById("lastNameErr");
 const emailErr = document.getElementById("emailErr");
 const msgErr = document.getElementById("msgErr");
 
@@ -19,12 +21,15 @@ const charCount = document.getElementById("charCount");
 // Maximum number of characters allowed in the message
 const MAX = 200;
 
-// Helper function to show or clear errors
-// -sets error text
-// - adds or removes red border on the input
-function setErr(el, errEl, text) {
-  errEl.textContent = text;
-  el.classList.toggle("input-error", !!text);
+// Timer for success message
+let successTimer;
+
+/* ===== Helper functions ===== */
+
+// Show or clear error message
+function setErr(inputEl, errorEl, text) {
+  errorEl.textContent = text;
+  inputEl.classList.toggle("input-error", !!text);
 }
 
 // Hide the success message
@@ -33,26 +38,37 @@ function hideSuccess() {
   successMsg.textContent = "";
 }
 
-// Email validation
-function validEmail(v) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+// Validate email format
+function validEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
 }
 
-// Update the character counter
+// Validate name (letters, spaces, hyphen, apostrophe)
+function validName(value) {
+  return /^[a-zA-ZåäöÅÄÖ\s'-]+$/.test(value.trim());
+}
+
+// Update character counter
 function updateCount() {
   const len = msgEl.value.length;
   charCount.textContent = `${len} / ${MAX} characters`;
-  // Turn red if the limit is exceeded
   charCount.style.color = len > MAX ? "#d10000" : "#2e7d32";
 }
 
-// Event listeners
+/* ===== Event listeners ===== */
 
-// Update character counter while typing in message
-msgEl.addEventListener("input", () => { updateCount(); hideSuccess(); });
+// Update character counter while typing message
+msgEl.addEventListener("input", () => {
+  updateCount();
+  hideSuccess();
+});
 
-[nameEl, emailEl].forEach(el => el.addEventListener("input", hideSuccess));
+// Hide success message when user edits fields
+[firstNameEl, lastNameEl, emailEl].forEach(el =>
+  el.addEventListener("input", hideSuccess)
+);
 
+// Handle form submit
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   hideSuccess();
@@ -60,39 +76,78 @@ form.addEventListener("submit", (e) => {
 
   let ok = true;
 
-  const nameOk = !!nameEl.value.trim();
-  setErr(nameEl, nameErr, nameOk ? "" : "Name is required.");
-  if (!nameOk) ok = false;
+  // First name validation
+  const firstOk =
+    firstNameEl.value.trim() !== "" && validName(firstNameEl.value);
 
+  setErr(
+    firstNameEl,
+    firstNameErr,
+    firstOk ? "" : "Please enter a valid first name."
+  );
+  if (!firstOk) ok = false;
+
+  // Last name validation
+  const lastOk =
+    lastNameEl.value.trim() !== "" && validName(lastNameEl.value);
+
+  setErr(
+    lastNameEl,
+    lastNameErr,
+    lastOk ? "" : "Please enter a valid last name."
+  );
+  if (!lastOk) ok = false;
+
+  // Email validation
   const emailOk = validEmail(emailEl.value);
-  setErr(emailEl, emailErr, emailOk ? "" : "Please enter a valid email address.");
+  setErr(
+    emailEl,
+    emailErr,
+    emailOk ? "" : "Please enter a valid email address."
+  );
   if (!emailOk) ok = false;
 
+  // Message validation
   let msgText = "";
-  if (!msgEl.value.trim()) msgText = "Message is required.";
-  else if (msgEl.value.length > MAX) msgText = `Max ${MAX} characters.`;
+  if (!msgEl.value.trim()) {
+    msgText = "Message is required.";
+  } else if (msgEl.value.length > MAX) {
+    msgText = `Max ${MAX} characters.`;
+  }
   setErr(msgEl, msgErr, msgText);
   if (msgText) ok = false;
 
+  // Stop if validation failed
   if (!ok) return;
 
+  // Show success message
   successMsg.textContent = "Thank you! I will get back to you soon.";
   successMsg.style.display = "block";
 
+  // Hide success message after 3 seconds
+  clearTimeout(successTimer);
+  successTimer = setTimeout(hideSuccess, 3000);
+
+  // Reset form and errors
   form.reset();
   updateCount();
-  setErr(nameEl, nameErr, "");
+  setErr(firstNameEl, firstNameErr, "");
+  setErr(lastNameEl, lastNameErr, "");
   setErr(emailEl, emailErr, "");
   setErr(msgEl, msgErr, "");
 });
 
+// Clear button
 clearBtn.addEventListener("click", () => {
+  clearTimeout(successTimer);
   form.reset();
   hideSuccess();
   updateCount();
-  setErr(nameEl, nameErr, "");
+  setErr(firstNameEl, firstNameErr, "");
+  setErr(lastNameEl, lastNameErr, "");
   setErr(emailEl, emailErr, "");
   setErr(msgEl, msgErr, "");
 });
 
+// Initialize character counter
 updateCount();
